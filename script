@@ -1,3 +1,4 @@
+_G.AutoFriend = true --Disables or Enables the entire script
 while wait(3.5)do
     if _G.AutoFriend == true then
 
