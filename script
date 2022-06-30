@@ -65,13 +65,14 @@ end
 
 function ChatSpamFunction()
 spawn(function()
-while wait (5)do
+while wait(5)do
     if Chatspam == true then
         local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
         local A_2 = "All"
         local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
         Event:FireServer(A_1, A_2)
-        OrionLib:Init()
+        
+	OrionLib:Init()
     
     end
 end
