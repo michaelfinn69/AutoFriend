@@ -12,10 +12,10 @@ UI Library START ( UI Library from discord.gg/sirius )
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "FriendWare", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Auto Friend", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Tab = Window:MakeTab({
-	Name = "Settings",
+	Name = "Auto Friend",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -71,6 +71,8 @@ while wait (5)do
         local A_2 = "All"
         local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
         Event:FireServer(A_1, A_2)
+        OrionLib:Init()
+    
     end
 end
 end)
