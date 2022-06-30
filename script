@@ -4,33 +4,51 @@ getgenv().Chatspam = false; --Enables or Disable the Chatspam
 getgenv().AutoFriend = false; --Enables or Disables the AutoFriend
 
 
---ui lib start
+--[[
 
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+UI Library START ( UI Library from discord.gg/sirius )
 
-local PhantomForcesWindow = Library:NewWindow("AutoFriend")
+--]]
 
-local KillingCheats = PhantomForcesWindow:NewSection("Settings")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "AutoFriend", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 
-KillingCheats:CreateToggle("AutoFriend", function(value)
-    getgenv().AutoFriend = value
-    print('Autofriend is:', value)
-    if value then
-       AutoFriendFunction();
-    end
-end)
+Tab:AddToggle({
+	Name = "AutoFriend",
+	Default = false,
+	Callback = function(Value)
+        getgenv().AutoFriend = Value
+		print('Auto Friend is: ', Value)
+        if Value then
+            AutoFriendFunction();
+	end    
+end})
 
-KillingCheats:CreateToggle("Chatspam", function(value)
-    getgenv().Chatspam = value
-    print('Chatspam is:', value)
-    if value then
-       ChatSpamFunction();
-    end
-end)
-    
---ui lib end
+Tab:AddToggle({
+	Name = "Chatspam",
+	Default = false,
+	Callback = function(Value)
+        getgenv().Chatspam = Value
+        print('Chat spam is: ', Value)
+        if Value then
+            ChatSpamFunction();
+    end 
+end})
 
+
+--[[
+
+UI Library END  (UI Library from discord.gg/sirius )
+
+--]]
 
 
 function AutoFriendFunction()
