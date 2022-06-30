@@ -1,15 +1,27 @@
-_G.AutoFriend = true --Disables or Enables the entire script
-while wait(3.5)do
-    if _G.AutoFriend == true then
+```lua
+--Made by: $ michael#0001
 
+_G.Chatspam = true; --Enables or Disable the Chatspam
+_G.AutoFriend = true; --Enables or Disables the AutoFriend
+
+spawn(function()
+while wait(1)do
+    if _G.AutoFriend == true then
+    local O1 = game:GetService("Players")
+     for _, Request in pairs(O1:GetPlayers()) do
+    O1.LocalPlayer:RequestFriendship(Request, Request) end
+     end
+end
+end)
+
+spawn(function()
+while wait (5)do
+    if _G.Chatspam == true then
         local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
         local A_2 = "All"
         local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
         Event:FireServer(A_1, A_2)
-
-        local O1 = game:GetService("Players")
-        for _, Request in pairs(O1:GetPlayers()) do
-            O1.LocalPlayer:RequestFriendship(Request, Request)
-        end
     end
 end
+end)
+```
