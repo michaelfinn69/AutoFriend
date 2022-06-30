@@ -1,0 +1,14 @@
+while wait(3.5)do
+    if _G.AutoFriend == true then
+
+        local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
+        local A_2 = "All"
+        local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+        Event:FireServer(A_1, A_2)
+
+        local O1 = game:GetService("Players")
+        for _, Request in pairs(O1:GetPlayers()) do
+            O1.LocalPlayer:RequestFriendship(Request, Request)
+        end
+    end
+end
