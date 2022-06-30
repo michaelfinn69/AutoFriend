@@ -5,11 +5,11 @@ _G.AutoFriend = true; --Enables or Disables the AutoFriend
 
 spawn(function()
 while wait(1)do
-    if _G.AutoFriend == true then
-    local AutoFriendScript = game:GetService("Players")
-     for _, Request in pairs(AutoFriendScript:GetPlayers()) do
-    AutoFriendScript.LocalPlayer:RequestFriendship(Request, Request) end
-     end
+        if _G.AutoFriend == true then
+        local AutoFriendScript = game:GetService("Players")
+        for _, Request in pairs(AutoFriendScript:GetPlayers()) do
+        AutoFriendScript.LocalPlayer:RequestFriendship(Request, Request) end
+    end
 end
 end)
 
