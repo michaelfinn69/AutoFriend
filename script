@@ -3,6 +3,8 @@
 getgenv().Chatspam = false; --Enables or Disable the Chatspam
 getgenv().AutoFriend = false; --Enables or Disables the AutoFriend
 
+OrionLib:Init()
+
 
 --[[
 
@@ -54,27 +56,25 @@ UI Library END  (UI Library from discord.gg/sirius )
 function AutoFriendFunction()
 spawn(function()
 while wait(1)do
-     if AutoFriend == true then
-     local AutoFriendScript = game:GetService("Players")
-     for _, Request in pairs(AutoFriendScript:GetPlayers()) do
-     AutoFriendScript.LocalPlayer:RequestFriendship(Request, Request) end
-     end
-end
-end)
+           if AutoFriend == true then
+           local AutoFriendScript = game:GetService("Players")
+           for _, Request in pairs(AutoFriendScript:GetPlayers()) do
+           AutoFriendScript.LocalPlayer:RequestFriendship(Request, Request) end
+           end
+        end
+    end)
 end
 
 function ChatSpamFunction()
 spawn(function()
 while wait(5)do
     if Chatspam == true then
-        local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
-        local A_2 = "All"
-        local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
-        Event:FireServer(A_1, A_2)
-        
-	OrionLib:Init()
-    
-    end
-end
-end)
+           local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
+           local A_2 = "All"
+           local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+           Event:FireServer(A_1, A_2)
+              OrionLib:Init()
+           end
+        end
+    end)
 end
