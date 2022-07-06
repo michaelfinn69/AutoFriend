@@ -1,78 +1,101 @@
---Made by: $ michael#0001
+    --Made by: $ michael#0001
 
-getgenv().Chatspam = false; --Enables or Disable the Chatspam
-getgenv().AutoFriend = false; --Enables or Disables the AutoFriend
-
-
---[[
-
-UI Library START ( UI Library from discord.gg/sirius )
-
---]]
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "Auto Friend", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
-local Tab = Window:MakeTab({
-	Name = "Auto Friend",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+    getgenv().Chatspam = false; --Enables or Disable the Chatspam
+    getgenv().AutoFriend = false; --Enables or Disables the AutoFriend
+    getgenv().AutoThank = false; --Enables or Disables the AutoThank
 
 
-Tab:AddToggle({
-	Name = "AutoFriend",
-	Default = false,
-	Callback = function(Value)
-        getgenv().AutoFriend = Value
-		print('Auto Friend is: ', Value)
-        if Value then
-            AutoFriendFunction();
-	end    
-end})
+    --[[
 
-Tab:AddToggle({
-	Name = "Chatspam",
-	Default = false,
-	Callback = function(Value)
-        getgenv().Chatspam = Value
-        print('Chat spam is: ', Value)
-        if Value then
-            ChatSpamFunction();
-    end 
-end})
+    UI Library START ( UI Library from discord.gg/sirius )
+
+    --]]
+
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+    local Window = OrionLib:MakeWindow({Name = "FriendWare", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+k
+    local Tab = Window:MakeTab({
+        Name = "Settings",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
 
 
---[[
+    Tab:AddToggle({
+        Name = "Auto Friend",
+        Default = false,
+        Callback = function(Value)
+            getgenv().AutoFriend = Value
+            print('Auto Friend is: ', Value)
+            if Value then
+                AutoFriendFunction();
+        end    
+    end})
 
-UI Library END  (UI Library from discord.gg/sirius )
+    Tab:AddToggle({
+        Name = "Chat spam",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Chatspam = Value
+            print('Chat spam is: ', Value)
+            if Value then
+                ChatSpamFunction();
+        end 
+    end})
 
---]]
+    Tab:AddToggle({
+        Name = "Auto Thank",
+        Default = false,
+        Callback = function(Value)
+            print('Chat spam is: ', Value)
+            if Value then
+                AutoThankFunction();
+        end    
+    end})
 
 
-function AutoFriendFunction()
-spawn(function()
-while wait(1)do
-           if AutoFriend == true then
-           local AutoFriendScript = game:GetService("Players")
-           for _, Request in pairs(AutoFriendScript:GetPlayers()) do
-           AutoFriendScript.LocalPlayer:RequestFriendship(Request, Request) end
-           end
-        end
-    end)
-end
+    --[[
 
-function ChatSpamFunction()
-spawn(function()
-while wait(5)do
-    if Chatspam == true then
-           local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
-           local A_2 = "All"
-           local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
-           Event:FireServer(A_1, A_2)
-              OrionLib:Init()
-           end
-        end
-    end)
-end
+    UI Library END  (UI Library from discord.gg/sirius )
+
+    --]]
+
+
+    function AutoFriendFunction()
+    spawn(function()
+    while wait(1)do
+            if AutoFriend == true then
+            local AutoFriendScript = game:GetService("Players")
+            for _, Request in pairs(AutoFriendScript:GetPlayers()) do
+            AutoFriendScript.LocalPlayer:RequestFriendship(Request, Request) end
+            end
+            end
+        end)
+    end
+
+    function ChatSpamFunction()
+    spawn(function()
+    while wait(5)do
+        if Chatspam == true then
+            local A_1 = "PLS ACCEPT MY FRIEND REQUEST EVERYONE"
+            local A_2 = "All"
+            local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+            Event:FireServer(A_1, A_2)
+            end
+            end
+        end)
+    end
+
+    function AutoThankFunction()
+        spawn(function()
+            while wait(10)do
+                if AutoThankFunction == true then
+                local B_1 = "THANK U FOR ACCEPTING MY FRIEND REQUEST"
+                local B_2 = "All"
+                local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+                Event:FireServer(B_1, B_2)
+            end
+            end
+        end)
+    end
