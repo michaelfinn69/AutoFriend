@@ -1,6 +1,4 @@
-# Auto-Friend
-Automatically friends all the people in the current Roblox server instantly, includes a chat spammer.
-
-UI library is from discord.gg/Sirius | orion ui lib 
-
-will fix performance some time so stfu
+# Auto - Friend / FriendWare
+A script that automatically friends all the people in the server.
+Includes a Chat spammer, I'm not planning to update this Script.
+The script most likely will update when It breaks / errors.
