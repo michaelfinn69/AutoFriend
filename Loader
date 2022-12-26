@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/michaelfinn69/Roblox-Auto-Friend/main/Main/FriendWare_Unobfuscated"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/michaelfinn69/Roblox-Auto-Friend/main/Main/AutoFriend.lua"))()
